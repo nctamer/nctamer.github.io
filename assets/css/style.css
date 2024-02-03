@@ -17,13 +17,8 @@
 
 :root {
 
-  /**
-   * colors
-   */
-
-  /* gradient */
-
-  --bg-gradient-onyx: linear-gradient(
+  /*
+    --bg-gradient-onyx: linear-gradient(
     to bottom right, 
     hsl(240, 1%, 25%) 3%, 
     hsl(0, 0%, 19%) 97%
@@ -54,8 +49,6 @@
     hsl(35, 100%, 68%)
   );
 
-  /* solid */
-
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
@@ -68,6 +61,70 @@
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
+  */
+
+  /**
+   * colors
+   */
+
+  /* gradient */
+
+  --bg-gradient-onyx: linear-gradient( /* Background of photo and show contacts button */
+    to bottom right, 
+    hsl(240, 7%, 84%) 3%, 
+    hsla(0, 9%, 57%, 0.973) 97%
+  );
+  
+  --bg-gradient-jet: linear-gradient( /* Background of content card (what I am doing) */
+    to bottom right, 
+    hsla(64, 14%, 79%, 0.034) 0%, 
+    hsla(34, 84%, 95%, 0.603) 100%
+  ), hsl(198, 100%, 98%);
+  --border-gradient-onyx: linear-gradient( /* Border of content card (what I am doing) */
+    to bottom right, 
+    hsla(224, 91%, 67%, 0.219) 0%, 
+    hsla(181, 28%, 37%, 0.219) 50%
+  );
+
+
+  --bg-gradient-yellow-1: linear-gradient(
+    to bottom right, 
+    hsl(219, 72%, 65%) 0%, 
+    hsla(202, 62%, 62%, 0.719) 50%
+  );
+  --bg-gradient-yellow-2: linear-gradient(
+    135deg, 
+    hsla(45, 100%, 71%, 0.251) 0%, 
+    hsla(35, 100%, 68%, 0) 59.86%
+  ), hsl(240, 17%, 83%); /* background of show contacts when highlighted */
+
+  --text-gradient-yellow: linear-gradient(
+    to right, 
+    hsl(188, 36%, 38%), 
+    hsl(229, 33%, 58%)
+  );  /* lines under about, or filling the skills bars */
+
+
+  /* solid */
+
+  --jet: hsla(208, 30%, 67%, 0.322);/* Borders of main text */
+  --onyx: hsla(184, 21%, 59%, 0.158); /* Background of researcher */
+
+  --eerie-black-1: hsla(168, 17%, 77%, 0.363);/* Background of email, contact etc */
+  --eerie-black-2: hsl(60, 100%, 99%); /* Background of main text */
+  --smoky-black: hsla(203, 25%, 77%, 0.185); /* Background of all */
+  --white-1: hsl(0, 0%, 1%); /* Researcher */
+  --white-2: hsl(0, 17%, 19%);/* Headings */
+  --orange-yellow-crayola: hsl(45, 13%, 24%); /* Selected menu item about */
+  --vegas-gold: hsl(204, 54%, 58%);
+
+
+  --light-gray: hsl(0, 0%, 7%); /* navbar not highlighted */
+  --light-gray-70: hsla(202, 70%, 27%, 0.829); /* navbar highlighted */
+  --navbar-bg: hsla(194, 10%, 74%, 0.568);
+
+  --bittersweet-shimmer: hsl(0, 43%, 51%);
+
 
   /**
    * typography
@@ -96,11 +153,11 @@
    * shadow
    */
   
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 35%, 0.082);
+  --shadow-2: 0 16px 30px hsla(0, 1%, 16%, 0.137); /* main shadow */
+  --shadow-3: 0 16px 40px hsla(0, 0%, 64%, 0);
+  --shadow-4: 0 25px 50px hsla(0, 9%, 10%, 0.048);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 23%, 0.349);
 
   /**
    * transition
@@ -111,13 +168,13 @@
 
 }
 
+ion-icon {
+  pointer-events: none;
+ }
 
 
 
 
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
 
 *, *::before, *::after {
   margin: 0;
@@ -156,7 +213,6 @@ input, textarea {
 html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
-
 
 
 
@@ -404,10 +460,11 @@ main {
 }
 
 .contact-item {
+  color: var(--light-gray-70);
   min-width: 100%;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .contact-info {
@@ -424,7 +481,7 @@ main {
 
 .contact-info :is(.contact-link, time, address) {
   color: var(--white-2);
-  font-size: var(--fs-7);
+  font-size: var(--fs-8);
 }
 
 .contact-info address { font-style: normal; }
@@ -433,7 +490,7 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 15px;
+  gap: 24px;
   padding-bottom: 4px;
   padding-left: 7px;
 }
@@ -459,7 +516,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: var(--navbar-bg);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
