@@ -568,8 +568,10 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
-  max-width: calc(100% - 46px);
-  width: calc(90% - 46px);
+  width: 100;
+  /* Other styles... */
+  white-space: nowrap;
+  overflow-x: auto; /* Add this line */
   margin: auto;
   background: var(--navbar-bg);
   -webkit-backdrop-filter: blur(10px); /* Add this line */
