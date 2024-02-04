@@ -568,23 +568,24 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100;
-  /* Other styles... */
-  white-space: nowrap;
-  overflow-x: auto; /* Add this line */
+  max-width: calc(100% - 46px);
+  width: calc(100% - 46px);
   margin: auto;
   background: var(--navbar-bg);
-  -webkit-backdrop-filter: blur(10px); /* Add this line */
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
   z-index: 5;
+  
+  /* Added styles */
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
-.navbar > * {
-  display: inline-block;
-}
 
 .navbar-list {
   display: flex;
