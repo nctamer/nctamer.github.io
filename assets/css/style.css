@@ -71,8 +71,8 @@
 
   --bg-gradient-onyx: linear-gradient( /* Background of photo and show contacts button */
     to bottom right, 
-    hsl(240, 7%, 84%) 3%, 
-    hsla(0, 9%, 57%, 0.973) 97%
+    hsl(240, 23%, 59%) 3%, 
+    hsl(189, 16%, 52%) 97%
   );
   
   --bg-gradient-jet: linear-gradient( /* Background of content card (what I am doing) */
@@ -112,7 +112,7 @@
   --jet: hsla(208, 31%, 88%, 0.149);/* Borders of main text */
   --onyx: hsla(184, 21%, 59%, 0.158); /* Background of researcher */
 
-  --eerie-black-1: hsla(168, 17%, 77%, 0.363);/* Background of email, contact etc */
+
   --eerie-black-2: hsl(60, 100%, 99%); /* Background of main text */
   --smoky-black: hsl(184, 24%, 89%); /* Background of all */
   --white-1: hsl(0, 0%, 1%); /* Researcher */
@@ -120,10 +120,14 @@
   --orange-yellow-crayola: hsl(45, 13%, 24%); /* Selected menu item about */
   --vegas-gold: hsl(204, 22%, 35%);
 
+  --buttons: hsla(205, 19%, 77%, 0.668);
+  --paper-hover: hsla(180, 48%, 92%, 0.801);
 
-  --light-gray: hsl(0, 0%, 7%); /* navbar not highlighted */
+
+  --eerie-black-1: hsla(240, 11%, 2%, 0.363);/* navbar current section */
+  --light-gray: hsl(0, 5%, 36%); /* navbar not highlighted */
   --light-gray-70: hsla(202, 70%, 27%, 0.829); /* navbar highlighted */
-  --navbar-bg: hsla(180, 8%, 95%, 0.698);
+  --navbar-bg: hsla(180, 34%, 85%, 0.451);
 
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
@@ -258,7 +262,7 @@ body { background: var(--smoky-black); }
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--eerie-black-1);
+  background: var(--buttons);
   border-radius: inherit;
   z-index: -1;
 }
@@ -303,7 +307,7 @@ article {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--eerie-black-1);
+  background: var(--buttons);
   border-radius: inherit;
   z-index: -1;
 }
@@ -458,13 +462,14 @@ main {
   top: -15px;
   right: -15px;
   border-radius: 0 15px;
-  font-size: 13px;
+  font-size: 20px;
   color: var(--orange-yellow-crayola);
   background: var(--border-gradient-onyx);
   padding: 10px;
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
   z-index: 1;
+
 }
 
 .info_more-btn::before {
@@ -472,7 +477,7 @@ main {
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: var(--bg-gradient-jet);
+  background: var(--navbar-bg);
   transition: var(--transition-1);
   z-index: -1;
 }
@@ -562,8 +567,12 @@ main {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  width: 60%; /* Minimum width */
+  max-width: 90%; /* Maximum width */
+  margin: auto;
   background: var(--navbar-bg);
+  -webkit-backdrop-filter: blur(10px); /* Add this line */
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -581,15 +590,18 @@ main {
 
 .navbar-link {
   color: var(--light-gray);
-  font-size: var(--fs-8);
-  padding: 20px 7px;
+  font-size: var(--fs-4);
+  font-weight: bold; /* Add this line */
+  padding: 20px 20px;
   transition: color var(--transition-1);
 }
 
 .navbar-link:hover,
-.navbar-link:focus { color: var(--light-gray-70); }
+.navbar-link:focus {
+  color: var(--light-gray-70);
+}
 
-.navbar-link.active { color: var(--orange-yellow-crayola); }
+.navbar-link.active { color: var(--eerie-black-1); }
 
 
 
@@ -1094,14 +1106,14 @@ main {
 .project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
 
 .project-item-icon-box {
-  --scale: 2.8;
+  --scale: 1.4;
 
-  color: hsla(193, 100%, 88%, 0.553);;
+  color: var(--paper-hover);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(var(--scale));
-  font-size: 40px;
+  font-size: 50px;
   opacity: 0;
   z-index: 1;
   transition: var(--transition-1);
@@ -1565,8 +1577,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .testimonials-text {
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
   }
 
   /* testimonials modal */
