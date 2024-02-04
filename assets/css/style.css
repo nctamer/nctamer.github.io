@@ -582,6 +582,10 @@ main {
   z-index: 5;
 }
 
+.navbar > * {
+  display: inline-block;
+}
+
 .navbar-list {
   display: flex;
   flex-wrap: wrap;
