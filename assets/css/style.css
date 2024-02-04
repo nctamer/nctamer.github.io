@@ -568,8 +568,8 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 60%; /* Minimum width */
-  max-width: 90%; /* Maximum width */
+  max-width: calc(100% - 46px);
+  width: calc(75% - 46px);
   margin: auto;
   background: var(--navbar-bg);
   -webkit-backdrop-filter: blur(10px); /* Add this line */
