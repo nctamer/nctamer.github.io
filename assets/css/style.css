@@ -1113,7 +1113,7 @@ main {
 .project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
 
 .project-item-icon-box {
-  --scale: 1.4;
+  --scale: 1.2;
 
   color: var(--paper-hover);
   position: absolute;
@@ -1147,7 +1147,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover img { transform: scale(1.2); } /* BY ME: I have changed the hover rescaling! */
+.project-item > a:hover img { transform: scale(1.1); } /* BY ME: I have changed the hover rescaling! */
 
 .project-title,
 .project-category { margin-left: 10px; }
@@ -1769,7 +1769,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .filter-item button:hover { color: var(--light-gray-70); }
 
-  .filter-item button.active { color: var(--orange-yellow-crayola); }
+  .filter-item button.active { color: var(--eerie-black-1); }
 
   /* portfolio and blog grid */
 
