@@ -476,6 +476,14 @@ main {
   border-radius: 8px;
 }
 
+.info-content .affiliation {
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  margin-top: 6px;
+  text-align: center;
+}
+
 .info_more-btn {
   position: absolute;
   top: -15px;
